@@ -21,8 +21,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <NavCom user={user} loading={loading}  />
-    
+        <NavCom  />
           <Image
             className="w-full fixed z-[-100] top-0 h-full object-cover aspect-[16/9] object-center"
             width={1500}

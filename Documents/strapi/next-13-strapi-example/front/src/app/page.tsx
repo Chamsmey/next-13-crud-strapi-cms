@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import { fetcher } from "../../lib/api";
-import FimlistCom from "./components/film/filmListCom";
+const FimlistCom = dynamic(()=>import('./components/film/filmListCom'));
 import { Film } from "types/film";
-import FormCreateFilmCom from "./formCreatefilm";
+import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ['greek'] });
 export default async function Home() {
   // fetch films from Strapi

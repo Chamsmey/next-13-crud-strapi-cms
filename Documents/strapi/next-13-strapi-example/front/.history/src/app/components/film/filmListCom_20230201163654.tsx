@@ -1,0 +1,37 @@
+
+'use client'
+import FilmCom from "@/app/filmCardCom";
+import FormEditFilmCom from "@/app/formForEditFilm";
+import Image from "next/image";
+import { useState } from "react";
+import { Film } from "types/film";
+const FimlistCom = ({data}:{data?:Film[]}) => {
+  const [isUpdate, setIsUpdate] = useState(false);
+  const [userForUpate, setUserForUpate] = useState({});
+  const [userIdForUpate, setUserIdForUpate] =useState();
+  const handleUpdate = async({user, id,isUpdated}:any)=>{
+      if(user && id) {
+        setUserForUpate(user);
+        setUserIdForUpate(id);
+        setIsUpdate(isUpdated);;
+      }
+  }
+    return (  
+      <>
+      <FormEditFilmCom data={undefined} id={userI}/>
+          <div className="w-full mx-auto flex py-5 flex-wrap">
+        {data?.map((item) => {
+          return (
+              <FilmCom data={item}/> 
+              )
+            })}
+            </div>
+
+        {/* movie card*/}
+     </>
+     
+
+    );
+}
+ 
+export default FimlistCom;
